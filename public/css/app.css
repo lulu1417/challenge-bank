@@ -1,0 +1,29 @@
+body {
+    margin: 0;
+    background-color: #9D9C9D;
+}
+.container {
+    width: 50%;
+    height: 100vh;
+    margin: 0 auto;
+    padding: 20px;
+    background: -webkit-gradient(linear, left top, right bottom, from(#FFE900), to(#FF6E00));
+    background: linear-gradient(to bottom right, #FFE900, #FF6E00);
+}
+.card-header {
+    font-size: 20px;
+}
+.card-body form {
+    font-size: 30px;
+}
+.card-body div {
+    font-size: 18px;
+}
+.card-body label, .card-body button {
+    font-size: 22px;
+}
+.card-body input {
+    font-size: 18px;
+}
+
+
