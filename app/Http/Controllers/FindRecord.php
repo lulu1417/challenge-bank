@@ -3,14 +3,17 @@
 
 namespace App\Http\Controllers;
 
-
 use App\Record;
+use Illuminate\Support\Facades\Auth;
 
 class FindRecord
 {
     function transfer($account){
 
-        $records = Record::where('remittance', $account->account)->orWhere('payee', $account->account)->get();
+        $records = Record::where('remittance', $account->account)->orWhere('payee', $account->account)->orderBy('created_at','DESC')->get();
+        if (Auth::user()->name == 'Bank') {
+            $records = Record::orderBy('created_at','desc')->get();
+        }
         $i = 0;
         foreach ($records as $record) {
             $remittance = $record['remittance'];
@@ -35,14 +38,14 @@ class FindRecord
             }
             $i++;
         }
-        if (count($records) > 30) {
-            $next = 50;
-            $rate = 0.01;
+        if (count($records) > 10) {
+            $next = 0;
+            $rate = 0.2;
             $account->level = 2;
 
-        } elseif (count($records) > 50) {
+        } elseif (count($records) > 20) {
             $next = 100;
-            $rate = 0.3;
+            $rate = 0;
             $account->level = 3;
         } else {
             $next = 10;
@@ -52,7 +55,7 @@ class FindRecord
         $account->update([
             'level' => $account->level,
         ]);
-        $response['data'] = $records->toArray();
+        $response['data'] = $records->orderBy('created_at','desc')->toArray();
         $response['name'] = $account->name;
         $response['balance'] = $account->balance;
         $response['level'] = $account->level;

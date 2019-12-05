@@ -134,7 +134,7 @@ class UserController extends BaseController
     }
     public function logout() {
         if (auth::user()->update(['api_token' => 'logged out'])) {
-            return "You've logged out";
+            return reponse()->json("You've logged out");
         }
     }
 
