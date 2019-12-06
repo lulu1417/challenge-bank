@@ -11,7 +11,7 @@ class FindRecord
     function transfer($account){
 
         $records = Record::where('remittance', $account->account)->orWhere('payee', $account->account)->orderBy('created_at','DESC')->get();
-        if (Auth::user()->name == 'Bank') {
+        if ($account == 'admin@camp.com') {
             $records = Record::orderBy('created_at','desc')->get();
         }
         $i = 0;
