@@ -18,7 +18,7 @@ class FindRecord
         foreach ($records as $record) {
             $remittance = $record['remittance'];
             if (strpos($remittance, 'camp') !== false) {
-                $record['remittance'] = $record->with('shopRemittance')->where('remittance', $remittance)->first('remittance')->toArray();
+                $record['remittance'] = $record->with('shopRemittance')->first('remittance')->toArray();
                 $data = $record['remittance'];
                 $record['remittance'] = $data['shop_remittance'];
             } else {
@@ -39,7 +39,7 @@ class FindRecord
             $i++;
         }
         if (count($records) > 10) {
-            $next = 0;
+            $next = 20;
             $rate = 0.2;
             $account->level = 2;
 
@@ -55,11 +55,10 @@ class FindRecord
         $account->update([
             'level' => $account->level,
         ]);
-        $response['data'] = $records->orderBy('created_at','desc')->toArray();
+        $response['data'] = $records;
         $response['name'] = $account->name;
         $response['balance'] = $account->balance;
         $response['level'] = $account->level;
-        $response['transection'] = count($records);
         $response['transection'] = count($records);
         $response['upgrade'] = $next - $response['transection'];
         $response['rate'] = $rate;

@@ -12,7 +12,7 @@ class ShopWallet extends Authenticatable
         'name', 'account', 'password', 'api_token', 'key', 'balance', 'level',
     ];
     protected $hidden = [
-        'password',
+        'password', 'updated_at'
     ];
 
     public function payment()

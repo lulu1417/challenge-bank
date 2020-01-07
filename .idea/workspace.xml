@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="643c88b8-74dd-4144-86b9-8259bcf000b1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Deposit.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Deposit.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FindRecord.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FindRecord.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ShopController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ShopController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Record.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Record.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ShopWallet.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/ShopWallet.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -200,6 +203,7 @@
       <workItem from="1575451804592" duration="287000" />
       <workItem from="1575455291386" duration="43000" />
       <workItem from="1575518302587" duration="1541000" />
+      <workItem from="1578377029378" duration="1671000" />
     </task>
     <servers />
   </component>

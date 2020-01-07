@@ -9,6 +9,9 @@ class Record extends Model
     protected $fillable = [
         'remittance', 'payee', 'amount', 'charging'
     ];
+    protected $hidden = [
+        'updated_at'
+    ];
     public function userRemittance()
     {
         return $this->belongsTo(UserWallet::class, 'remittance','account');

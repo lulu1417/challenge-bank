@@ -18,12 +18,9 @@ class ShopController extends BaseController
 
     public function index()
     {
-        $account = Auth::user()->account;
+        $account = Auth::user();
         $find = new FindRecord;
         $records = $find->transfer($account);
-//        if (Auth::user()->name == 'Bank') {
-//            $records = Record::orderBy('created_at','desc')->get();
-//        }
         if ($records) {
             return response()->json($records);
         } else
